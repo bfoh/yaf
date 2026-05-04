@@ -154,7 +154,7 @@ export default function LegacySection() {
                 <div className="relative">
                   <span
                     ref={count48Ref}
-                    className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tabular-nums tracking-tight block"
+                    className="font-display text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black whitespace-nowrap text-white tabular-nums tracking-tight block"
                   >
                     0+
                   </span>
@@ -172,7 +172,7 @@ export default function LegacySection() {
                 <div className="relative">
                   <span
                     ref={count24Ref}
-                    className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gold tabular-nums tracking-tight block"
+                    className="font-display text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black whitespace-nowrap text-gold tabular-nums tracking-tight block"
                   >
                     GH₵0.0B+
                   </span>
@@ -190,7 +190,7 @@ export default function LegacySection() {
                 <div className="relative">
                   <span
                     ref={count15Ref}
-                    className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white/50 tabular-nums tracking-tight block"
+                    className="font-display text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black whitespace-nowrap text-white/50 tabular-nums tracking-tight block"
                   >
                     0
                   </span>
