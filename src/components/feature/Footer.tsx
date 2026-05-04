@@ -114,7 +114,7 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <a
               href="#"
-              className="text-gray-warm hover:text-gold transition-colors duration-300"
+              className="inline-flex items-center justify-center w-11 h-11 -m-2 text-gray-warm hover:text-gold transition-colors duration-300"
               aria-label="LinkedIn"
               rel="noopener noreferrer"
             >
@@ -122,7 +122,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              className="text-gray-warm hover:text-gold transition-colors duration-300"
+              className="inline-flex items-center justify-center w-11 h-11 -m-2 text-gray-warm hover:text-gold transition-colors duration-300"
               aria-label="Instagram"
               rel="noopener noreferrer"
             >
@@ -130,7 +130,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              className="text-gray-warm hover:text-gold transition-colors duration-300"
+              className="inline-flex items-center justify-center w-11 h-11 -m-2 text-gray-warm hover:text-gold transition-colors duration-300"
               aria-label="Twitter"
               rel="noopener noreferrer"
             >
@@ -138,7 +138,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              className="text-gray-warm hover:text-gold transition-colors duration-300"
+              className="inline-flex items-center justify-center w-11 h-11 -m-2 text-gray-warm hover:text-gold transition-colors duration-300"
               aria-label="Facebook"
               rel="noopener noreferrer"
             >

@@ -210,27 +210,25 @@ export default function ContactSection() {
             </div>
 
             {/* Quick stats row */}
-            <div className="flex items-center gap-8 mt-10 pt-8 border-t border-white/10">
-              <div>
-                <p className="font-display text-3xl md:text-4xl font-bold text-gold">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 mt-10 pt-8 border-t border-white/10">
+              <div className="min-w-0">
+                <p className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gold whitespace-nowrap">
                   48+
                 </p>
                 <p className="text-[10px] tracking-[0.15em] uppercase font-body text-white/40 mt-1">
                   Projects Delivered
                 </p>
               </div>
-              <div className="w-[1px] h-12 bg-white/10" />
-              <div>
-                <p className="font-display text-3xl md:text-4xl font-bold text-white">
+              <div className="min-w-0 sm:border-l sm:border-white/10 sm:pl-8">
+                <p className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white whitespace-nowrap">
                   15
                 </p>
                 <p className="text-[10px] tracking-[0.15em] uppercase font-body text-white/40 mt-1">
                   Years Experience
                 </p>
               </div>
-              <div className="w-[1px] h-12 bg-white/10" />
-              <div>
-                <p className="font-display text-3xl md:text-4xl font-bold text-gold">
+              <div className="min-w-0 sm:border-l sm:border-white/10 sm:pl-8">
+                <p className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gold whitespace-nowrap">
                   GH₵2.4B
                 </p>
                 <p className="text-[10px] tracking-[0.15em] uppercase font-body text-white/40 mt-1">

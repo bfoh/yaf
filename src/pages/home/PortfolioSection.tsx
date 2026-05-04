@@ -19,6 +19,13 @@ export default function PortfolioSection() {
     const header = headerRef.current;
     if (!section || !track || !header) return;
 
+    // Skip GSAP scroll-pin on touch devices — use native horizontal scroll instead.
+    // Scrub-driven horizontal pin is janky on mobile Safari (no momentum, awkward gesture).
+    const isTouchDevice =
+      typeof window !== "undefined" &&
+      ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+    if (isTouchDevice) return;
+
     const ctx = gsap.context(() => {
       const cards = track.querySelectorAll(".portfolio-card");
       const totalWidth = track.scrollWidth - window.innerWidth + 100;
@@ -38,7 +45,7 @@ export default function PortfolioSection() {
       });
 
       // Parallax depth for each card
-      cards.forEach((card, i) => {
+      cards.forEach((card) => {
         const img = card.querySelector("img");
         if (img) {
           gsap.fromTo(
@@ -92,7 +99,8 @@ export default function PortfolioSection() {
         </div>
       </div>
 
-      {/* Horizontal scroll track */}
+      {/* Horizontal scroll track. Mobile: native swipe. Desktop: GSAP pin (overflow-visible lets the translated track extend; section's overflow-hidden clips it). */}
+      <div className="overflow-x-auto lg:overflow-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       <div
         ref={trackRef}
         className="flex gap-5 md:gap-6 pb-20 md:pb-28 lg:pb-36 pl-6 md:pl-10 lg:pl-16 pr-6"
@@ -171,6 +179,7 @@ export default function PortfolioSection() {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

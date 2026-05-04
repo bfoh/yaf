@@ -97,7 +97,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="md:hidden flex flex-col items-center justify-center gap-1.5 p-3 min-w-[44px] min-h-[44px]"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
           data-cursor-hover
@@ -123,16 +123,16 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`md:hidden absolute top-full left-0 right-0 bg-charcoal transition-all duration-500 overflow-hidden ${
-          mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          mobileOpen ? "max-h-[480px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-6 py-6 flex flex-col gap-5">
+        <div className="px-6 py-4 flex flex-col">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-sm tracking-[0.15em] uppercase font-body font-medium text-white/80 hover:text-gold transition-colors duration-300"
+              className="py-3 text-sm tracking-[0.15em] uppercase font-body font-medium text-white/80 hover:text-gold transition-colors duration-300 border-b border-white/5 last:border-b-0"
             >
               {link.label}
             </a>
@@ -140,7 +140,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, "#contact")}
-            className="mt-2 px-6 py-3 bg-gold text-charcoal text-sm font-body font-semibold tracking-[0.1em] uppercase text-center"
+            className="mt-4 mb-2 px-6 py-4 bg-gold text-charcoal text-sm font-body font-semibold tracking-[0.1em] uppercase text-center"
           >
             Request a Consultation
           </a>

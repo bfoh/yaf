@@ -2,7 +2,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative w-full h-screen overflow-hidden bg-charcoal"
+      className="relative w-full h-screen min-h-[100svh] overflow-hidden bg-charcoal"
     >
       <video
         src="/yafhero.mp4"
@@ -10,7 +10,7 @@ export default function HeroSection() {
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover"
       />
