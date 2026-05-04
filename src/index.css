@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    cursor: default;
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      cursor: none;
+    }
+
+    a,
+    button,
+    [data-cursor-hover],
+    input,
+    textarea,
+    select {
+      cursor: none;
+    }
+  }
+
+  ::selection {
+    background-color: rgba(197, 160, 89, 0.3);
+    color: #1a1a1a;
+  }
+}
+
+@layer components {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+}
