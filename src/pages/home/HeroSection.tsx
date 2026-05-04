@@ -2,7 +2,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative w-full h-screen min-h-[100svh] overflow-hidden bg-charcoal"
+      className="relative w-full aspect-video md:aspect-auto md:h-screen md:min-h-[100svh] overflow-hidden bg-charcoal"
     >
       <video
         src="/yafhero.mp4"
