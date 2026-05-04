@@ -141,73 +141,6 @@ export default function LegacySection() {
               </a>
             </ScrollReveal>
 
-            {/* Animated Stats Bar */}
-            <div ref={statsRef} className="mt-14">
-              {/* Top gold line */}
-              <div
-                ref={statLineRef}
-                className="w-full h-[1px] bg-gradient-to-r from-gold/60 via-gold/30 to-transparent mb-10"
-              />
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
-                {/* Stat 1: Projects */}
-                <div className="relative">
-                  <span
-                    ref={count48Ref}
-                    className="font-display text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black whitespace-nowrap text-white tabular-nums tracking-tight block"
-                  >
-                    0+
-                  </span>
-                  <p className="text-xs tracking-[0.2em] uppercase font-body text-gray-warm/80 mt-3">
-                    Projects Delivered
-                  </p>
-                  {/* Mini indicator */}
-                  <div className="mt-4 flex items-center gap-2">
-                    <div className="w-8 h-[2px] bg-gold" />
-                    <span className="text-[10px] text-gold/60 font-body tracking-wider">SINCE 2009</span>
-                  </div>
-                </div>
-
-                {/* Stat 2: Value */}
-                <div className="relative">
-                  <span
-                    ref={count24Ref}
-                    className="font-display text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black whitespace-nowrap text-gold tabular-nums tracking-tight block"
-                  >
-                    GH₵0.0B+
-                  </span>
-                  <p className="text-xs tracking-[0.2em] uppercase font-body text-gray-warm/80 mt-3">
-                    in Value Built
-                  </p>
-                  {/* Mini indicator */}
-                  <div className="mt-4 flex items-center gap-2">
-                    <div className="w-8 h-[2px] bg-white/30" />
-                    <span className="text-[10px] text-white/40 font-body tracking-wider">ACROSS GHANA</span>
-                  </div>
-                </div>
-
-                {/* Stat 3: Years */}
-                <div className="relative">
-                  <span
-                    ref={count15Ref}
-                    className="font-display text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black whitespace-nowrap text-white/50 tabular-nums tracking-tight block"
-                  >
-                    0
-                  </span>
-                  <p className="text-xs tracking-[0.2em] uppercase font-body text-gray-warm/80 mt-3">
-                    Years of Excellence
-                  </p>
-                  {/* Mini indicator */}
-                  <div className="mt-4 flex items-center gap-2">
-                    <div className="w-8 h-[2px] bg-gold/40" />
-                    <span className="text-[10px] text-gold/50 font-body tracking-wider">AND COUNTING</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom decorative line */}
-              <div className="mt-10 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-            </div>
           </div>
 
           {/* Right image card */}
@@ -237,6 +170,69 @@ export default function LegacySection() {
               </div>
             </ScrollReveal>
           </div>
+        </div>
+
+        {/* Animated Stats Bar (full-width row) */}
+        <div ref={statsRef} className="mb-20">
+          <div
+            ref={statLineRef}
+            className="w-full h-[1px] bg-gradient-to-r from-gold/60 via-gold/30 to-transparent mb-10"
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
+            {/* Stat 1: Projects */}
+            <div className="relative min-w-0">
+              <span
+                ref={count48Ref}
+                className="font-display text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-black text-white tabular-nums tracking-tight block whitespace-nowrap"
+              >
+                0+
+              </span>
+              <p className="text-xs tracking-[0.2em] uppercase font-body text-gray-warm/80 mt-3">
+                Projects Delivered
+              </p>
+              <div className="mt-4 flex items-center gap-2">
+                <div className="w-8 h-[2px] bg-gold" />
+                <span className="text-[10px] text-gold/60 font-body tracking-wider">SINCE 2009</span>
+              </div>
+            </div>
+
+            {/* Stat 2: Value */}
+            <div className="relative min-w-0">
+              <span
+                ref={count24Ref}
+                className="font-display text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-black text-gold tabular-nums tracking-tight block whitespace-nowrap"
+              >
+                GH₵0.0B+
+              </span>
+              <p className="text-xs tracking-[0.2em] uppercase font-body text-gray-warm/80 mt-3">
+                in Value Built
+              </p>
+              <div className="mt-4 flex items-center gap-2">
+                <div className="w-8 h-[2px] bg-white/30" />
+                <span className="text-[10px] text-white/40 font-body tracking-wider">ACROSS GHANA</span>
+              </div>
+            </div>
+
+            {/* Stat 3: Years */}
+            <div className="relative min-w-0">
+              <span
+                ref={count15Ref}
+                className="font-display text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-black text-white/50 tabular-nums tracking-tight block whitespace-nowrap"
+              >
+                0
+              </span>
+              <p className="text-xs tracking-[0.2em] uppercase font-body text-gray-warm/80 mt-3">
+                Years of Excellence
+              </p>
+              <div className="mt-4 flex items-center gap-2">
+                <div className="w-8 h-[2px] bg-gold/40" />
+                <span className="text-[10px] text-gold/50 font-body tracking-wider">AND COUNTING</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         </div>
 
         {/* Legacy project cards grid */}
