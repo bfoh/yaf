@@ -12,7 +12,7 @@ export default function HeroSection() {
         playsInline
         preload="metadata"
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-contain md:object-cover"
       />
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-charcoal to-transparent z-[1] pointer-events-none" />
     </section>
