@@ -5,80 +5,84 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative w-full bg-warm py-20 md:py-28 lg:py-36"
+      className="relative w-full bg-warm py-24 md:py-32 lg:py-40 overflow-hidden"
     >
       <div className="w-full px-6 md:px-10 lg:px-16">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 md:mb-20">
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16 md:mb-24">
+          <div className="lg:col-span-7">
             <ScrollReveal>
-              <p className="text-[11px] tracking-[0.25em] uppercase font-body text-gray-warm mb-4">
-                WHAT WE DO
-              </p>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="h-px w-10 bg-charcoal/30" />
+                <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-gray-soft">
+                  What We Do · 03 Disciplines
+                </p>
+              </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-                <span className="text-charcoal">OUR</span>{" "}
-                <span className="text-gold">SERVICES</span>
+              <h2 className="font-display display-tight text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] font-semibold text-charcoal text-balance">
+                Concept, craft &amp; <span className="italic font-medium text-gold-deep">conduct</span>.
               </h2>
             </ScrollReveal>
           </div>
-          <ScrollReveal delay={0.2}>
-            <p className="text-sm md:text-base text-gray-warm font-body max-w-md leading-relaxed">
-              End-to-end construction excellence from concept to completion — every structure we build is a statement of intent.
+          <ScrollReveal delay={0.2} className="lg:col-span-5 lg:pt-6">
+            <p className="text-[15px] md:text-base text-gray-soft font-body leading-relaxed text-pretty max-w-md">
+              End-to-end construction excellence — from the first sketch to the final ribbon. Every structure we deliver is a quiet statement of intent, signed in steel and stone.
             </p>
           </ScrollReveal>
         </div>
 
-        {/* Service cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-          {servicesList.map((service, idx) => (
-            <ScrollReveal key={service.id} delay={idx * 0.15}>
-              <div className="group relative bg-cream rounded-xl p-7 md:p-9 border border-charcoal/5 hover:border-gold/30 transition-all duration-500 h-full flex flex-col">
-                {/* Number */}
-                <span className="absolute top-7 right-7 md:top-9 md:right-9 font-display text-6xl md:text-7xl font-bold text-charcoal/5 group-hover:text-gold/10 transition-colors duration-500">
-                  0{idx + 1}
-                </span>
+        {/* Hairline */}
+        <div className="hairline mb-0" />
 
-                {/* Icon */}
-                <div className="w-14 h-14 flex items-center justify-center border border-gold/30 rounded-lg mb-6 group-hover:bg-gold/10 transition-colors duration-300">
-                  <i className={`${service.icon} text-2xl text-gold`} />
+        {/* Service rows — editorial split */}
+        <div className="divide-y divide-charcoal/10">
+          {servicesList.map((service, idx) => (
+            <ScrollReveal key={service.id} delay={idx * 0.12}>
+              <article className="group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-14 transition-colors duration-500 ease-editorial hover:bg-warm-deep/40 -mx-6 md:-mx-10 lg:-mx-16 px-6 md:px-10 lg:px-16">
+                {/* Number + icon */}
+                <div className="md:col-span-2 flex md:flex-col md:items-start md:justify-between md:gap-8">
+                  <span className="font-display text-3xl md:text-5xl font-semibold text-gold tabular-nums tracking-tight">
+                    0{idx + 1}
+                  </span>
+                  <i className={`${service.icon} text-2xl md:text-3xl text-charcoal/30 group-hover:text-gold transition-colors duration-500 ease-editorial`} />
                 </div>
 
-                {/* Subtitle */}
-                <p className="text-[10px] tracking-[0.2em] uppercase font-body text-gold/80 mb-3">
-                  {service.subtitle}
-                </p>
-
-                {/* Title */}
-                <h3 className="font-display text-xl md:text-2xl font-bold text-charcoal mb-4 group-hover:text-gold transition-colors duration-300">
-                  {service.title}
-                </h3>
+                {/* Title + subtitle */}
+                <div className="md:col-span-4">
+                  <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-gold-deep mb-3">
+                    {service.subtitle}
+                  </p>
+                  <h3 className="font-display display-tight text-2xl md:text-3xl lg:text-4xl font-semibold text-charcoal leading-[1.05] group-hover:text-gold-deep transition-colors duration-500 ease-editorial">
+                    {service.title}
+                  </h3>
+                </div>
 
                 {/* Description */}
-                <p className="text-sm text-gray-warm font-body leading-relaxed mb-6 flex-grow">
-                  {service.description}
-                </p>
+                <div className="md:col-span-4">
+                  <p className="text-[14px] md:text-[15px] text-gray-soft font-body leading-relaxed text-pretty">
+                    {service.description}
+                  </p>
+                </div>
 
-                {/* Features list */}
-                <ul className="flex flex-col gap-2">
+                {/* Features */}
+                <ul className="md:col-span-2 flex flex-col gap-2.5">
                   {service.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-center gap-2 text-xs font-body text-charcoal/70"
+                      className="flex items-center gap-2.5 text-[12px] tracking-[0.04em] font-body text-charcoal/80"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                      <span className="block w-1 h-1 rounded-full bg-gold-deep" />
                       {feature}
                     </li>
                   ))}
                 </ul>
-
-                {/* Hover line accent */}
-                <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-xl" />
-              </div>
+              </article>
             </ScrollReveal>
           ))}
         </div>
+
+        <div className="hairline mt-0" />
       </div>
     </section>
   );

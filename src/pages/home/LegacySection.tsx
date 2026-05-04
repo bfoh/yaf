@@ -103,20 +103,23 @@ export default function LegacySection() {
           {/* Left text */}
           <div className="w-full lg:w-[55%]">
             <ScrollReveal>
-              <p className="text-[11px] tracking-[0.25em] uppercase font-body text-gold/80 mb-6">
-                SINCE 2009 — ACCRA, GHANA
-              </p>
+              <div className="flex items-center gap-3 mb-7">
+                <span className="h-px w-10 bg-gold" />
+                <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-gold">
+                  Since 2009 · Accra, Ghana
+                </p>
+              </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
+              <h2 className="font-display display-tight text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[4.25rem] font-semibold text-cream mb-8">
                 Building Ghana&apos;s
                 <br />
-                <span className="text-gold">Future,</span>
+                <span className="italic text-gold font-medium">future,</span>
                 <br />
-                One Landmark
+                one landmark
                 <br />
-                at a Time
+                at a time.
               </h2>
             </ScrollReveal>
 
@@ -133,11 +136,11 @@ export default function LegacySection() {
                   e.preventDefault();
                   document.querySelector("#portfolio")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center gap-3 px-7 py-3.5 border border-gold text-gold text-xs font-body font-semibold tracking-[0.1em] uppercase hover:bg-gold hover:text-charcoal transition-all duration-300 group whitespace-nowrap"
+                className="inline-flex items-center gap-3 group whitespace-nowrap text-[11px] tracking-[0.32em] uppercase font-body font-medium text-gold hover:text-cream transition-colors duration-500 ease-editorial"
                 data-cursor-hover
               >
+                <span className="block w-8 h-px bg-gold transition-all duration-500 ease-editorial group-hover:w-14 group-hover:bg-cream" />
                 Explore Our Story
-                <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform duration-300" />
               </a>
             </ScrollReveal>
 
@@ -148,24 +151,26 @@ export default function LegacySection() {
             <ScrollReveal delay={0.2}>
               <div
                 ref={imageRef}
-                className="relative rounded-2xl overflow-hidden aspect-[4/5] lg:aspect-[3/4]"
+                className="relative overflow-hidden aspect-[4/5] lg:aspect-[3/4]"
               >
                 <img
                   src="https://readdy.ai/api/search-image?query=Modern%20government%20building%20complex%20in%20Accra%20Ghana%20with%20dramatic%20angular%20architecture%2C%20warm%20sandstone%20and%20glass%20facade%2C%20golden%20hour%20sunlight%20casting%20long%20shadows%2C%20premium%20architectural%20photography%2C%20deep%20blue%20sky%20with%20scattered%20clouds%2C%20professional%20construction%20quality&width=700&height=900&seq=11&orientation=portrait"
                   alt="YAF Constructions Legacy Project"
                   className="w-full h-[115%] object-cover object-top"
                 />
-                <div className="absolute top-5 left-5 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <p className="text-[11px] tracking-[0.15em] uppercase font-body text-charcoal font-medium">
-                    <i className="ri-map-pin-line mr-1 text-gold" />
-                    Accra, Ghana
+                <div className="absolute top-5 left-5 inline-flex items-center gap-2 backdrop-blur-md bg-charcoal/40 border border-cream/15 px-3 py-1.5">
+                  <i className="ri-map-pin-line text-gold text-xs" />
+                  <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-cream">
+                    Accra · Ghana
                   </p>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-charcoal via-charcoal/80 to-transparent p-6 md:p-8">
-                  <p className="font-display text-lg md:text-xl font-bold text-white">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-charcoal via-charcoal/70 to-transparent p-6 md:p-8">
+                  <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-gold mb-2">
+                    Featured · 2023
+                  </p>
+                  <p className="font-display display-tight text-xl md:text-2xl font-semibold text-cream leading-tight">
                     Parliament Annex Complex
                   </p>
-                  <p className="text-sm text-gray-warm font-body mt-1">2023</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -184,7 +189,7 @@ export default function LegacySection() {
             <div className="relative min-w-0">
               <span
                 ref={count48Ref}
-                className="font-display text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-black text-white tabular-nums tracking-tight block whitespace-nowrap"
+                className="font-display display-tight text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold text-cream tabular-nums tracking-tight block whitespace-nowrap"
               >
                 0+
               </span>
@@ -201,7 +206,7 @@ export default function LegacySection() {
             <div className="relative min-w-0">
               <span
                 ref={count24Ref}
-                className="font-display text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-black text-gold tabular-nums tracking-tight block whitespace-nowrap"
+                className="font-display display-tight text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold text-gold tabular-nums tracking-tight block whitespace-nowrap"
               >
                 GH₵0.0B+
               </span>
@@ -210,7 +215,7 @@ export default function LegacySection() {
               </p>
               <div className="mt-4 flex items-center gap-2">
                 <div className="w-8 h-[2px] bg-white/30" />
-                <span className="text-[10px] text-white/40 font-body tracking-wider">ACROSS GHANA</span>
+                <span className="text-[10px] text-cream/40 font-body tracking-wider">ACROSS GHANA</span>
               </div>
             </div>
 
@@ -218,7 +223,7 @@ export default function LegacySection() {
             <div className="relative min-w-0">
               <span
                 ref={count15Ref}
-                className="font-display text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-black text-white/50 tabular-nums tracking-tight block whitespace-nowrap"
+                className="font-display display-tight text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold text-cream/45 tabular-nums tracking-tight block whitespace-nowrap"
               >
                 0
               </span>
@@ -232,38 +237,45 @@ export default function LegacySection() {
             </div>
           </div>
 
-          <div className="mt-10 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="mt-10 w-full h-[1px] bg-gradient-to-r from-transparent via-cream/10 to-transparent" />
         </div>
 
-        {/* Legacy project cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+        {/* Legacy project list — editorial */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 md:gap-x-10 gap-y-14 md:gap-y-16">
           {legacyProjects.map((project, idx) => (
             <ScrollReveal key={project.id} delay={idx * 0.15}>
-              <div className="group relative bg-[#222222] rounded-xl overflow-hidden border border-white/5 hover:border-gold/40 transition-all duration-500">
-                <div className="relative aspect-[4/3] overflow-hidden">
+              <article className="group relative">
+                <div className="relative aspect-[4/5] overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-top transition-transform duration-[900ms] ease-editorial will-change-transform group-hover:scale-[1.04]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#222222] via-transparent to-transparent" />
-                </div>
-                <div className="p-5 md:p-6">
-                  <p className="text-[10px] tracking-[0.2em] uppercase font-body text-gold/80 mb-2">
-                    {project.location}
-                  </p>
-                  <h3 className="font-display text-lg md:text-xl font-bold text-white mb-2 group-hover:text-gold transition-colors duration-300">
-                    {project.name}
-                  </h3>
-                  <p className="text-xs md:text-sm text-gray-warm font-body leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="mt-4 flex items-center justify-between">
-                    <span className="text-xs text-gray-warm/60 font-body">{project.year}</span>
-                    <i className="ri-arrow-right-up-line text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/10 to-transparent" />
+                  <div className="absolute top-5 left-5 text-[10px] tracking-[0.32em] uppercase font-body font-medium text-cream/90">
+                    {String(idx + 1).padStart(2, "0")} / {String(legacyProjects.length).padStart(2, "0")}
+                  </div>
+                  <div className="absolute bottom-5 right-5 inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase font-body text-gold opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-editorial">
+                    View
+                    <i className="ri-arrow-right-up-line" />
                   </div>
                 </div>
-              </div>
+                <div className="pt-5 md:pt-6">
+                  <div className="flex items-baseline justify-between gap-3 mb-3">
+                    <p className="text-[10px] tracking-[0.28em] uppercase font-body font-medium text-gold">
+                      {project.location}
+                    </p>
+                    <span className="text-[10px] tracking-[0.18em] uppercase font-body text-cream/40">{project.year}</span>
+                  </div>
+                  <h3 className="font-display text-xl md:text-2xl font-semibold text-cream mb-3 leading-snug group-hover:text-gold transition-colors duration-400 ease-editorial">
+                    {project.name}
+                  </h3>
+                  <p className="text-[13px] md:text-sm text-gray-warm font-body leading-relaxed text-pretty">
+                    {project.description}
+                  </p>
+                  <div className="mt-5 h-px w-10 bg-gold transition-all duration-500 ease-editorial group-hover:w-20" />
+                </div>
+              </article>
             </ScrollReveal>
           ))}
         </div>

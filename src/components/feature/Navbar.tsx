@@ -33,13 +33,13 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,backdrop-filter,border-color,height] duration-500 ease-editorial border-b ${
         scrolled
-          ? "bg-cream/95 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
+          ? "bg-cream/90 backdrop-blur-xl border-charcoal/8"
+          : "bg-transparent border-transparent"
       }`}
     >
-      <div className="w-full px-6 md:px-10 lg:px-16 flex items-center justify-between h-20">
+      <div className={`w-full px-6 md:px-10 lg:px-16 flex items-center justify-between transition-[height] duration-500 ease-editorial ${scrolled ? "h-16 md:h-[4.5rem]" : "h-20 md:h-24"}`}>
         {/* Logo */}
         <a
           href="#hero"
@@ -50,48 +50,50 @@ export default function Navbar() {
           <img
             src="https://public.readdy.ai/ai/img_res/cd077d3b-c4cf-489f-b684-2326cb027692.png"
             alt="YAF Constructions Ltd"
-            className="h-12 w-auto"
+            className="h-10 md:h-11 w-auto"
           />
           <div className="hidden sm:block">
             <p
-              className={`font-display text-sm font-bold leading-tight tracking-wider transition-colors duration-300 ${
-                scrolled ? "text-charcoal" : "text-white"
+              className={`font-display text-[13px] md:text-[14px] font-semibold leading-none tracking-[0.08em] transition-colors duration-300 ${
+                scrolled ? "text-charcoal" : "text-cream"
               }`}
             >
               YAF CONSTRUCTIONS
             </p>
             <p
-              className={`text-[10px] tracking-[0.25em] uppercase transition-colors duration-300 ${
-                scrolled ? "text-gray-warm" : "text-white/60"
+              className={`text-[9px] mt-1 tracking-[0.32em] uppercase font-body font-medium transition-colors duration-300 ${
+                scrolled ? "text-gray-soft" : "text-cream/55"
               }`}
             >
-              LTD — Accra, Ghana
+              LTD · ACCRA, GHANA
             </p>
           </div>
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-9">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className={`text-xs tracking-[0.15em] uppercase font-body font-medium transition-colors duration-300 hover:text-gold whitespace-nowrap ${
-                scrolled ? "text-charcoal" : "text-white/80"
+              className={`group relative text-[11px] tracking-[0.22em] uppercase font-body font-medium transition-colors duration-300 hover:text-gold whitespace-nowrap ${
+                scrolled ? "text-charcoal/80" : "text-cream/85"
               }`}
               data-cursor-hover
             >
               {link.label}
+              <span className="absolute -bottom-1.5 left-0 right-0 h-px scale-x-0 bg-gold transition-transform duration-400 ease-editorial origin-left group-hover:scale-x-100" />
             </a>
           ))}
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, "#contact")}
-            className="ml-4 px-6 py-2.5 bg-gold text-charcoal text-xs font-body font-semibold tracking-[0.1em] uppercase hover:bg-gold-light transition-colors duration-300 whitespace-nowrap"
+            className="ml-2 inline-flex items-center gap-2 pl-5 pr-4 py-2.5 bg-gold text-charcoal text-[11px] font-body font-semibold tracking-[0.18em] uppercase hover:bg-cream transition-all duration-400 ease-editorial whitespace-nowrap group"
             data-cursor-hover
           >
-            Consultation
+            <span>Consultation</span>
+            <span className="inline-block w-3 h-px bg-charcoal transition-all duration-400 ease-editorial group-hover:w-5" />
           </a>
         </div>
 

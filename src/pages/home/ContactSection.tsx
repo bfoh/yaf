@@ -160,48 +160,44 @@ export default function ContactSection() {
           <div className="w-full lg:w-[45%] flex flex-col justify-between">
             <div>
               {/* Label */}
-              <p className="text-[11px] tracking-[0.3em] uppercase font-body text-gold mb-6">
-                START A CONVERSATION
-              </p>
+              <div className="flex items-center gap-3 mb-7">
+                <span className="h-px w-10 bg-gold" />
+                <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-gold">
+                  Start a conversation
+                </p>
+              </div>
 
               {/* Giant headline */}
               <h2
                 ref={headingRef}
-                className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase leading-[0.85] tracking-tight mb-8"
+                className="font-display display-tight text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] font-semibold text-cream mb-8"
               >
-                LET&apos;S
+                Let&apos;s build
                 <br />
-                <span className="text-gold">BUILD</span>
+                <span className="italic text-gold font-medium">your vision</span>
                 <br />
-                YOUR
-                <br />
-                <span className="text-white/40">VISION</span>
+                <span className="text-cream/30">into permanence.</span>
               </h2>
 
               {/* Gold rule */}
-              <div ref={ruleRef} className="w-20 h-[3px] bg-gold mb-10" />
+              <div ref={ruleRef} className="w-16 h-px bg-gold mb-10" />
 
               {/* Subtext */}
-              <p className="text-sm md:text-base text-gray-warm font-body leading-relaxed max-w-md mb-12">
-                Whether it&apos;s a government complex, corporate headquarters, or a premium residence — our team is ready to bring your project to life with uncompromising precision and quality.
+              <p className="text-[15px] md:text-base text-gray-warm font-body leading-relaxed text-pretty max-w-md mb-12">
+                Government complex, corporate headquarters, or a premium residence — our team is ready to translate ambition into structure, with uncompromising precision and quality.
               </p>
             </div>
 
-            {/* Contact info cards */}
-            <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Contact info — editorial list */}
+            <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-7 border-t border-cream/10 pt-8">
               {contactItems.map((item) => (
-                <div
-                  key={item.label}
-                  className="group flex items-start gap-4 p-5 border border-white/10 rounded-lg hover:border-gold/40 transition-all duration-400 bg-white/[0.02] hover:bg-white/[0.04]"
-                >
-                  <div className="w-10 h-10 flex items-center justify-center border border-gold/30 rounded-lg flex-shrink-0 group-hover:bg-gold/10 transition-colors duration-300">
-                    <i className={`${item.icon} text-gold text-lg`} />
-                  </div>
+                <div key={item.label} className="group flex items-start gap-4">
+                  <i className={`${item.icon} text-gold text-xl mt-0.5 transition-transform duration-500 ease-editorial group-hover:-translate-y-0.5`} />
                   <div>
-                    <p className="text-[10px] tracking-[0.2em] uppercase font-body text-gold/70 mb-1">
+                    <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-gold mb-1.5">
                       {item.label}
                     </p>
-                    <p className="text-sm font-body text-white/80">
+                    <p className="text-[14px] font-body text-cream/85 leading-snug">
                       {item.value}
                     </p>
                   </div>
@@ -210,28 +206,28 @@ export default function ContactSection() {
             </div>
 
             {/* Quick stats row */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-8 mt-10 pt-8 border-t border-white/10">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 mt-10 pt-8 border-t border-cream/10">
               <div className="min-w-0">
-                <p className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gold whitespace-nowrap">
+                <p className="font-display display-tight text-[1.75rem] sm:text-3xl md:text-4xl font-semibold text-gold whitespace-nowrap nums-tabular">
                   48+
                 </p>
-                <p className="text-[10px] tracking-[0.15em] uppercase font-body text-white/40 mt-1">
+                <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-cream/45 mt-2">
                   Projects Delivered
                 </p>
               </div>
-              <div className="min-w-0 sm:border-l sm:border-white/10 sm:pl-8">
-                <p className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white whitespace-nowrap">
+              <div className="min-w-0 sm:border-l sm:border-cream/10 sm:pl-8">
+                <p className="font-display display-tight text-[1.75rem] sm:text-3xl md:text-4xl font-semibold text-cream whitespace-nowrap nums-tabular">
                   15
                 </p>
-                <p className="text-[10px] tracking-[0.15em] uppercase font-body text-white/40 mt-1">
+                <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-cream/45 mt-2">
                   Years Experience
                 </p>
               </div>
-              <div className="min-w-0 sm:border-l sm:border-white/10 sm:pl-8">
-                <p className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gold whitespace-nowrap">
+              <div className="min-w-0 sm:border-l sm:border-cream/10 sm:pl-8">
+                <p className="font-display display-tight text-[1.75rem] sm:text-3xl md:text-4xl font-semibold text-gold whitespace-nowrap nums-tabular">
                   GH₵2.4B
                 </p>
-                <p className="text-[10px] tracking-[0.15em] uppercase font-body text-white/40 mt-1">
+                <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-cream/45 mt-2">
                   Value Built
                 </p>
               </div>
@@ -242,32 +238,31 @@ export default function ContactSection() {
           <div className="w-full lg:w-[55%] lg:pl-8">
             <div
               ref={formRef}
-              className="relative bg-white/[0.03] border border-white/10 rounded-2xl p-7 md:p-10 lg:p-12 backdrop-blur-sm"
+              className="relative border-t border-l border-gold/20 pl-6 md:pl-10 pt-8 md:pt-10"
             >
               {/* Corner accent */}
-              <div className="absolute -top-px -left-px w-8 h-8 border-t-2 border-l-2 border-gold/50 rounded-tl-2xl pointer-events-none" />
-              <div className="absolute -bottom-px -right-px w-8 h-8 border-b-2 border-r-2 border-gold/50 rounded-br-2xl pointer-events-none" />
+              <div className="absolute -top-px -left-px w-10 h-10 border-t-2 border-l-2 border-gold pointer-events-none" />
 
               {submitted ? (
-                <div className="text-center py-16">
-                  <div className="w-20 h-20 mx-auto mb-8 flex items-center justify-center bg-gold/15 rounded-full border border-gold/30">
-                    <i className="ri-check-double-line text-4xl text-gold" />
+                <div className="py-16">
+                  <div className="w-14 h-14 mb-8 flex items-center justify-center border border-gold">
+                    <i className="ri-check-double-line text-2xl text-gold" />
                   </div>
-                  <h3 className="font-display text-3xl font-bold text-white mb-4">
-                    Request Received
+                  <h3 className="font-display display-tight text-3xl md:text-4xl font-semibold text-cream mb-4">
+                    Request received.
                   </h3>
-                  <p className="text-sm text-gray-warm font-body max-w-sm mx-auto leading-relaxed">
+                  <p className="text-[15px] text-gray-warm font-body max-w-sm leading-relaxed text-pretty">
                     Thank you for reaching out. Our team will contact you within 24 business hours to discuss your project in detail.
                   </p>
                 </div>
               ) : (
                 <>
-                  <div className="mb-8">
-                    <p className="text-[11px] tracking-[0.2em] uppercase font-body text-gold/70 mb-2">
-                      REQUEST A CONSULTATION
+                  <div className="mb-10">
+                    <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-gold mb-3">
+                      Request a Consultation
                     </p>
-                    <h3 className="font-display text-2xl md:text-3xl font-bold text-white">
-                      Project Inquiry
+                    <h3 className="font-display display-tight text-3xl md:text-4xl lg:text-5xl font-semibold text-cream">
+                      Project inquiry.
                     </h3>
                   </div>
 
@@ -280,7 +275,7 @@ export default function ContactSection() {
                   >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-[10px] tracking-[0.2em] uppercase font-body text-white/50 mb-2">
+                        <label className="block text-[10px] tracking-[0.32em] uppercase font-body font-medium text-cream/50 mb-2">
                           Full Name *
                         </label>
                         <input
@@ -289,14 +284,14 @@ export default function ContactSection() {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="John Mensah"
-                          className="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-lg text-white text-sm font-body placeholder:text-white/20 focus:outline-none focus:border-gold/50 focus:bg-white/[0.07] transition-all duration-300"
+                          className="w-full px-0 py-3.5 bg-transparent border-0 border-b border-cream/15 text-cream text-[15px] font-body placeholder:text-cream/25 focus:outline-none focus:border-gold transition-colors duration-400 ease-editorial"
                         />
                         {errors?.name && (
                           <p className="text-xs text-red-400 font-body mt-1">{errors.name}</p>
                         )}
                       </div>
                       <div>
-                        <label className="block text-[10px] tracking-[0.2em] uppercase font-body text-white/50 mb-2">
+                        <label className="block text-[10px] tracking-[0.32em] uppercase font-body font-medium text-cream/50 mb-2">
                           Email Address *
                         </label>
                         <input
@@ -305,7 +300,7 @@ export default function ContactSection() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="john@company.com.gh"
-                          className="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-lg text-white text-sm font-body placeholder:text-white/20 focus:outline-none focus:border-gold/50 focus:bg-white/[0.07] transition-all duration-300"
+                          className="w-full px-0 py-3.5 bg-transparent border-0 border-b border-cream/15 text-cream text-[15px] font-body placeholder:text-cream/25 focus:outline-none focus:border-gold transition-colors duration-400 ease-editorial"
                         />
                         {errors?.email && (
                           <p className="text-xs text-red-400 font-body mt-1">{errors.email}</p>
@@ -315,7 +310,7 @@ export default function ContactSection() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-[10px] tracking-[0.2em] uppercase font-body text-white/50 mb-2">
+                        <label className="block text-[10px] tracking-[0.32em] uppercase font-body font-medium text-cream/50 mb-2">
                           Phone Number
                         </label>
                         <input
@@ -324,38 +319,38 @@ export default function ContactSection() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+233 (0) XX XXX XXXX"
-                          className="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-lg text-white text-sm font-body placeholder:text-white/20 focus:outline-none focus:border-gold/50 focus:bg-white/[0.07] transition-all duration-300"
+                          className="w-full px-0 py-3.5 bg-transparent border-0 border-b border-cream/15 text-cream text-[15px] font-body placeholder:text-cream/25 focus:outline-none focus:border-gold transition-colors duration-400 ease-editorial"
                         />
                       </div>
                       <div>
-                        <label className="block text-[10px] tracking-[0.2em] uppercase font-body text-white/50 mb-2">
+                        <label className="block text-[10px] tracking-[0.32em] uppercase font-body font-medium text-cream/50 mb-2">
                           Project Type *
                         </label>
                         <select
                           name="projectType"
                           value={formData.projectType}
                           onChange={handleChange}
-                          className="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-lg text-white text-sm font-body focus:outline-none focus:border-gold/50 focus:bg-white/[0.07] transition-all duration-300 appearance-none"
+                          className="w-full px-0 py-3.5 bg-transparent border-0 border-b border-cream/15 text-cream text-[15px] font-body focus:outline-none focus:border-gold transition-colors duration-400 ease-editorial appearance-none cursor-pointer"
                         >
-                          <option value="" className="bg-charcoal text-white">
+                          <option value="" className="bg-charcoal text-cream">
                             Select project type
                           </option>
-                          <option value="government" className="bg-charcoal text-white">
+                          <option value="government" className="bg-charcoal text-cream">
                             Government / Institutional
                           </option>
-                          <option value="corporate" className="bg-charcoal text-white">
+                          <option value="corporate" className="bg-charcoal text-cream">
                             Corporate / Commercial
                           </option>
-                          <option value="residential" className="bg-charcoal text-white">
+                          <option value="residential" className="bg-charcoal text-cream">
                             Premium Residential
                           </option>
-                          <option value="industrial" className="bg-charcoal text-white">
+                          <option value="industrial" className="bg-charcoal text-cream">
                             Industrial / Warehouse
                           </option>
-                          <option value="hospitality" className="bg-charcoal text-white">
+                          <option value="hospitality" className="bg-charcoal text-cream">
                             Hospitality / Resort
                           </option>
-                          <option value="other" className="bg-charcoal text-white">
+                          <option value="other" className="bg-charcoal text-cream">
                             Other
                           </option>
                         </select>
@@ -366,7 +361,7 @@ export default function ContactSection() {
                     </div>
 
                     <div>
-                      <label className="block text-[10px] tracking-[0.2em] uppercase font-body text-white/50 mb-2">
+                      <label className="block text-[10px] tracking-[0.32em] uppercase font-body font-medium text-cream/50 mb-2">
                         Project Details
                       </label>
                       <textarea
@@ -376,13 +371,13 @@ export default function ContactSection() {
                         placeholder="Tell us about your vision, timeline, and budget..."
                         rows={4}
                         maxLength={500}
-                        className="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-lg text-white text-sm font-body placeholder:text-white/20 focus:outline-none focus:border-gold/50 focus:bg-white/[0.07] transition-all duration-300 resize-none"
+                        className="w-full px-0 py-3.5 bg-transparent border-0 border-b border-cream/15 text-cream text-[15px] font-body placeholder:text-cream/25 focus:outline-none focus:border-gold transition-colors duration-400 ease-editorial resize-none"
                       />
                       <div className="flex justify-between mt-1">
                         {errors?.message && (
                           <p className="text-xs text-red-400 font-body">{errors.message}</p>
                         )}
-                        <p className="text-[10px] text-white/30 font-body ml-auto">
+                        <p className="text-[10px] text-cream/30 font-body ml-auto">
                           {formData.message.length}/500
                         </p>
                       </div>
@@ -390,11 +385,11 @@ export default function ContactSection() {
 
                     <button
                       type="submit"
-                      className="w-full sm:w-auto self-start px-10 py-4 bg-gold text-charcoal text-sm font-body font-semibold tracking-[0.1em] uppercase hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 whitespace-nowrap group"
+                      className="mt-4 w-full sm:w-auto self-start inline-flex items-center justify-center gap-3 px-9 py-4 bg-gold text-charcoal text-[11px] font-body font-semibold tracking-[0.32em] uppercase hover:bg-cream transition-all duration-500 ease-editorial whitespace-nowrap group"
                       data-cursor-hover
                     >
-                      Submit Inquiry
-                      <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform duration-300" />
+                      <span>Submit Inquiry</span>
+                      <span className="inline-block w-4 h-px bg-charcoal transition-all duration-500 ease-editorial group-hover:w-8" />
                     </button>
                   </form>
                 </>

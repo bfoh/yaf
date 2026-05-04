@@ -77,23 +77,26 @@ export default function PortfolioSection() {
       className="relative w-full bg-charcoal overflow-hidden"
     >
       {/* Header */}
-      <div ref={headerRef} className="pt-20 md:pt-28 lg:pt-36 pb-10 md:pb-14 px-6 md:px-10 lg:px-16">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div ref={headerRef} className="pt-24 md:pt-32 lg:pt-40 pb-12 md:pb-16 px-6 md:px-10 lg:px-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           <div>
             <ScrollReveal>
-              <p className="text-[11px] tracking-[0.25em] uppercase font-body text-gold/80 mb-4">
-                SELECTED WORKS
-              </p>
+              <div className="flex items-center gap-3 mb-5">
+                <span className="h-px w-10 bg-gold" />
+                <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-gold">
+                  Selected Works · 2021–2025
+                </p>
+              </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                PORTFOLIO
+              <h2 className="font-display display-tight text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] font-semibold text-cream">
+                The <span className="italic text-gold font-medium">portfolio</span>.
               </h2>
             </ScrollReveal>
           </div>
           <ScrollReveal delay={0.2}>
-            <p className="text-sm text-gray-warm font-body max-w-sm leading-relaxed">
-              A curated selection of our most distinguished projects — each one a testament to precision, vision, and enduring quality.
+            <p className="text-[15px] md:text-base text-gray-warm font-body max-w-md leading-relaxed text-pretty">
+              A curated selection of our most distinguished work — each project a quiet testament to precision, vision, and enduring quality.
             </p>
           </ScrollReveal>
         </div>
@@ -109,73 +112,66 @@ export default function PortfolioSection() {
           <button
             key={project.id}
             onClick={() => navigate(`/project/${project.id}`)}
-            className="portfolio-card group relative flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] rounded-xl overflow-hidden bg-[#222222] border border-white/5 hover:border-gold/40 transition-all duration-500 text-left"
+            className="portfolio-card group relative flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] overflow-hidden text-left transition-transform duration-500 ease-editorial"
             data-cursor-hover
           >
-            <div className="relative aspect-[3/4] overflow-hidden">
+            <div className="relative aspect-[3/4] overflow-hidden bg-charcoal-soft">
               <img
                 src={project.image}
                 alt={project.name}
-                className="w-[120%] h-full object-cover object-top scale-110"
+                className="w-full h-full object-cover object-top transition-transform duration-[1100ms] ease-editorial will-change-transform group-hover:scale-[1.06]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/35 to-transparent" />
 
-              {/* Status badge */}
-              <div className="absolute top-5 right-5 z-10">
+              {/* Index */}
+              <div className="absolute top-6 left-6 right-6 flex items-start justify-between z-10">
+                <span className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-cream/85">
+                  {String(idx + 1).padStart(2, "0")} / {String(portfolioProjects.length).padStart(2, "0")}
+                </span>
                 {project.status === "in-progress" ? (
-                  <div className="flex items-center gap-1.5 bg-gold/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-charcoal opacity-75" />
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-charcoal" />
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 border border-gold/60 backdrop-blur-sm">
+                    <span className="relative flex h-1.5 w-1.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-70" />
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-gold" />
                     </span>
-                    <p className="text-[10px] tracking-[0.15em] uppercase font-body text-charcoal font-semibold">
+                    <p className="text-[9px] tracking-[0.28em] uppercase font-body font-medium text-gold">
                       In Progress
                     </p>
                   </div>
                 ) : (
-                  <div className="bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                    <p className="text-[10px] tracking-[0.15em] uppercase font-body text-white/70 font-medium">
-                      Completed
-                    </p>
-                  </div>
+                  <p className="text-[9px] tracking-[0.28em] uppercase font-body font-medium text-cream/60 backdrop-blur-sm border border-cream/15 px-2.5 py-1">
+                    Completed
+                  </p>
                 )}
               </div>
 
-              {/* Category badge */}
-              <div className="absolute top-5 left-5 bg-gold/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                <p className="text-[10px] tracking-[0.15em] uppercase font-body text-charcoal font-semibold">
-                  {project.category}
-                </p>
-              </div>
-
-              {/* Number */}
-              <span className="absolute top-5 right-5 font-display text-5xl font-bold text-white/10 group-hover:text-gold/20 transition-colors duration-500 mt-12">
-                0{idx + 1}
-              </span>
-
               {/* Content overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <p className="text-xs text-gray-warm/70 font-body mb-1">{project.year}</p>
-                <h3 className="font-display text-lg md:text-xl lg:text-2xl font-bold text-white group-hover:text-gold transition-colors duration-300 leading-tight">
+                <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-gold mb-3">
+                  {project.category} · {project.year}
+                </p>
+                <h3 className="font-display display-tight text-xl md:text-2xl lg:text-[1.75rem] font-semibold text-cream group-hover:text-gold transition-colors duration-500 ease-editorial leading-[1.1]">
                   {project.name}
                 </h3>
-                <span className="mt-4 inline-flex items-center gap-2 text-xs font-body text-gold tracking-wide opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                  View Project
-                  <i className="ri-arrow-right-line" />
-                </span>
+                <div className="mt-5 flex items-center gap-3">
+                  <span className="h-px w-8 bg-gold transition-all duration-500 ease-editorial group-hover:w-16" />
+                  <span className="text-[10px] tracking-[0.28em] uppercase font-body text-gold opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-500 ease-editorial">
+                    View Project
+                  </span>
+                </div>
               </div>
             </div>
           </button>
         ))}
 
         {/* End spacer */}
-        <div className="flex-shrink-0 w-[20vw] flex items-center justify-center">
-          <div className="text-center">
-            <p className="font-display text-2xl md:text-3xl font-bold text-white/20 mb-3">
-              48+
+        <div className="flex-shrink-0 w-[55vw] sm:w-[40vw] md:w-[30vw] lg:w-[22vw] flex items-center">
+          <div>
+            <p className="font-display display-tight text-5xl md:text-6xl font-semibold text-cream/20 mb-3 tabular-nums">
+              48<span className="text-gold/40">+</span>
             </p>
-            <p className="text-xs tracking-[0.15em] uppercase font-body text-gray-warm/50">
-              More projects delivered
+            <p className="text-[10px] tracking-[0.32em] uppercase font-body font-medium text-gray-warm/55">
+              More landmarks · ask for full dossier
             </p>
           </div>
         </div>
